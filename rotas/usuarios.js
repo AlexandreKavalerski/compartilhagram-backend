@@ -31,9 +31,11 @@ const upload = multer({
 
 
 
-router.get('/', (req, res) => {
-    modelUsuario.find((err, usuarios)=>{
-        res.send({usuarios: usuarios}); 
+router.post('/autenticar', (req, res) => {
+    dados = req.body;
+    
+    modelUsuario.findOne({login: dados.login}, (err, usuario)=>{        
+        res.send({usuario: usuario}); 
     });
 });
 
