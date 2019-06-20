@@ -1,7 +1,9 @@
-const express = require("express");
+const express = require('express');
 const app = express();
+
 const usuarios = require('./rotas/usuarios');
 
+app.use(express.json());
 
 app.get('/', (req, res) => {
     res.send('Olá mundo!');
