@@ -9,5 +9,14 @@ router.get('/', (req, res) => {
     });
 });
 
+router.post('/cadastrar', (req, res) => {
+    const dados = req.body;
+    const novoUsuario = new modelUsuario({nome: dados.nome, login: dados.login, avatar: dados.avatar});
+    novoUsuario.save();
+
+    res.send({mensagem: "Novo usuário cadastrado no sistema", usuario: novoUsuario});
+    
+});
+
 
 module.exports = router;
