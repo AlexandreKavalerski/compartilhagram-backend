@@ -15,7 +15,7 @@ router.post('/cadastrar', upload.single('imagem'), (req, res) => {
     
     const novoPost = new modelPost(
         {
-        autor: { nome: dados.autor.nome, avatar: dados.autor.avatar, login: dados.autor.login }, 
+        autor: { nome: dados.nomeAutor, avatar: dados.avatarAutor, login: dados.loginAutor }, 
         curtidas: 0, 
         legenda: dados.legenda, 
         imagem: req.file.location
