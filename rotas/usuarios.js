@@ -21,4 +21,10 @@ router.post('/cadastrar', upload.single('avatar'), (req, res) => {
     
 });
 
+router.post('/upload', upload.single('arquivo'), (req, res) => {
+    console.log(req.file.path);
+    res.send({mensagem: `Novo arquivo ('${req.file.path }') cadastrado no sistema`});
+    
+});
+
 module.exports = router;
