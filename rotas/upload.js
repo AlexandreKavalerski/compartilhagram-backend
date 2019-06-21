@@ -2,9 +2,15 @@ const multer = require('multer'),
     multers3 = require('multer-s3'),
     path = require('path'),
     AWS = require('aws-sdk');
+const config = require('../config');
 
 
-AWS.config.loadFromPath('s3_config.json');
+AWS.config = new AWS.Config({
+    accessKeyId: config.AWSAccessKeyId,
+    secretAccessKey: config.AWSSecretAccessKey,
+    region: config.AWSRegion
+})
+
 const s3 = new AWS.S3();
 
 

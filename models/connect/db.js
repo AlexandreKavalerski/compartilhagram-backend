@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
+const dbUrl = require('../../config').DBUrl;
 
-mongoose.connect('mongodb://localhost:27017/compartilhagram', {useNewUrlParser: true});
+mongoose.connect(dbUrl, {useNewUrlParser: true});
 
 module.exports = mongoose;
