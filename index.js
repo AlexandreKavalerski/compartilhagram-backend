@@ -9,7 +9,7 @@ const porta = require('./config').Port;
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Olá mundo!');
+    res.send('Compartilhagram API v0.0.1');
 });
 
 app.use('/usuarios', usuarios);
