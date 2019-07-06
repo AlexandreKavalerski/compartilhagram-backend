@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 const usuarios = require('./rotas/usuarios');
 const posts = require('./rotas/posts');
 
 const porta = require('./config').Port;
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
